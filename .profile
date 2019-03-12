@@ -39,3 +39,4 @@ export LC_ADDRESS=de_DE.utf8
 export LC_TELEPHONE=de_DE.utf8
 
 export EDITOR=vim
+export DOTNET_CLI_TELEMETRY_OPTOUT=true
