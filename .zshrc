@@ -95,5 +95,9 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="$EDITOR ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias -g G="|grep -E"
+alias -g IG="|grep -Ei"
+alias -g L="|less"
+alias -g DN=">/dev/null"
+alias -g EN=">/dev/null 2>&1"
