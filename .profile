@@ -37,3 +37,5 @@ export LC_CTYPE=de_DE.utf8
 export LC_MONETARY=de_DE.utf8
 export LC_ADDRESS=de_DE.utf8
 export LC_TELEPHONE=de_DE.utf8
+
+export EDITOR=vim
