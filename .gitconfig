@@ -10,3 +10,5 @@
 	k = !gitk --all &
 	ls = log --oneline
 	caa = commit -a --amend -C HEAD
+[credential]
+	helper = cache
