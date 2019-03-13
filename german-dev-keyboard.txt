@@ -1,0 +1,54 @@
+# If .Xmodmap does not work, the system might use __xkb__.
+
+## This goes into `/usr/share/X11/xkb/symbols/de` after the `basic` definition:
+
+partial alphanumeric_keys
+xkb_symbols "dev" {
+    include "de(basic)"
+    name[Group1]="German (development)";
+
+    key <TLDE>	{ [  asciicircum,     degree, dead_circumflex,        U2032 ]	};
+    key <AE11>	{ [    backslash,   question,          ssharp, questiondown ]	};
+    key <AE12>	{ [        acute,      grave,      dead_acute,   dead_grave ]	};
+    key <AE01>	{ [            1,     exclam,      exclamdown,        U2033 ]	};
+    key <AD11>	{ [        slash,        bar,      udiaeresis,   Udiaeresis ]	};
+    key <AC10>	{ [  bracketleft,  braceleft,      odiaeresis,   Odiaeresis ]	};
+    key <AC11>	{ [ bracketright, braceright,      adiaeresis,   Adiaeresis ]	};
+    key <SPCE>	{ [        space,      space,    nobreakspace,        space ]	};
+};
+
+## For this to show up, also path `/usr/share/X11/xkb/rules/evdev.xml` with:
+
+--- evdev.before	2019-03-13 14:44:30.781997647 +0100
++++ evdev.xml	2019-03-13 14:44:07.422044833 +0100
+@@ -3364,24 +3364,30 @@
+       <configItem>
+         <name>de</name>
+         
+         <shortDescription>de</shortDescription>
+         <description>German</description>
+         <languageList>
+           <iso639Id>ger</iso639Id>
+         </languageList>
+       </configItem>
+       <variantList>
+         <variant>
+           <configItem>
++            <name>dev</name>
++            <description>German (development)</description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
+             <name>deadacute</name>
+             <description>German (dead acute)</description>
+           </configItem>
+         </variant>
+         <variant>
+           <configItem>
+             <name>deadgraveacute</name>
+             <description>German (dead grave acute)</description>
+           </configItem>
+         </variant>
+         <variant>
+           <configItem>
