@@ -1,0 +1,5 @@
+# /etc/default/keyboard
+XKBLAYOUT=de
+XKBVARIANT=dev
+XKBOPTIONS="caps:none,shift:both_capslock,terminate:ctrl_alt_bksp"
+BACKSPACE=guess

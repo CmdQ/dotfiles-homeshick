@@ -17,7 +17,11 @@ xkb_symbols "dev" {
     key <SPCE>	{ [        space,      space,    nobreakspace,        space ]	};
 };
 
-## For this to show up, also path `/usr/share/X11/xkb/rules/evdev.xml` with:
+## This keyboard can be set through `/etc/default/keyboard`.
+
+The `keyboard` file is also provided.
+
+## For this to show up in keyboard selection, also path `/usr/share/X11/xkb/rules/evdev.xml` with:
 
 --- evdev.before	2019-03-13 14:44:30.781997647 +0100
 +++ evdev.xml	2019-03-13 14:44:07.422044833 +0100
