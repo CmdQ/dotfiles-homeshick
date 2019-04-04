@@ -12,8 +12,12 @@
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
     if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
+        . "$HOME/.bashrc"
     fi
+fi
+
+if [ -r "$HOME/.local_exports" ]; then
+    . "$HOME/.local_exports"
 fi
 
 # set PATH so it includes user's private bin if it exists
