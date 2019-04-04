@@ -106,3 +106,4 @@ alias -g L="|less"
 alias -g NUL="/dev/null"
 alias -g DN=">/dev/null"
 alias -g EN=">/dev/null 2>&1"
+alias vim=nvim
