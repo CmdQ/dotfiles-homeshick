@@ -96,6 +96,8 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias enrun="LC_ALL=en_GB.utf8"
+alias encalc="enrun libreoffice --calc"
 alias -g G="|grep -E"
 alias -g IG="|grep -Ei"
 alias -g L="|less"
