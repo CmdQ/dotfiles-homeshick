@@ -101,5 +101,6 @@ alias -g IG="|grep -Ei"
 alias -g L="|less"
 alias -g NUL="/dev/null"
 alias -g DN=">/dev/null"
-alias -g EN=">/dev/null 2>&1"
+alias -g EN="2>/dev/null"
+alias -g AN=">/dev/null 2>&1"
 alias vim=nvim
