@@ -44,3 +44,4 @@ export LC_TELEPHONE=de_DE.utf8
 
 export EDITOR=nvim
 export DOTNET_CLI_TELEMETRY_OPTOUT=true
+export LESS=-FRXK
