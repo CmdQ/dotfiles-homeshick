@@ -29,19 +29,3 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
-
-export LANG=en_US.utf8
-
-export LC_TIME=en_GB.utf8
-export LC_PAPER=en_GB.utf8
-export LC_MEASUREMENT=en_GB.utf8
-export LC_NAME=en_GB.utf8
-
-export LC_CTYPE=de_DE.utf8
-export LC_MONETARY=de_DE.utf8
-export LC_ADDRESS=de_DE.utf8
-export LC_TELEPHONE=de_DE.utf8
-
-export EDITOR=nvim
-export DOTNET_CLI_TELEMETRY_OPTOUT=true
-export LESS=-FRXK
