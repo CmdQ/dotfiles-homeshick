@@ -7,8 +7,15 @@
 	co = checkout
 	hist = log --graph --color --find-copies
 	sp = stash pop
-	k = !gitk --all &
+	k = !gitk --all --simplify-merges &
 	ls = log --oneline
 	caa = commit -a --amend -C HEAD
 [credential]
 	helper = cache
+[core]
+	longpaths = true
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
