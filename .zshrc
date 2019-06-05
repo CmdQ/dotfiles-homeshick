@@ -63,11 +63,15 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-extras dircycle docker screen sudo vscode web-search)
+plugins=(dircycle docker sudo vscode web-search) #gitfast 
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+  source /etc/profile.d/vte.sh
+fi
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -94,8 +98,12 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias enrun="LC_ALL=en_GB.utf8"
-alias encalc="enrun libreoffice --calc"
+alias ls="lsd"
+alias l="ls -l --group-dirs=first"
+alias la="ls -a"
+alias ll="ls -la --group-dirs=first"
+alias lt="ls --tree"
+alias ld="ls -lt --date=relative"
 alias -g G="|grep -E"
 alias -g IG="|grep -Ei"
 alias -g L="|less"
@@ -104,3 +112,7 @@ alias -g DN=">/dev/null"
 alias -g EN="2>/dev/null"
 alias -g AN=">/dev/null 2>&1"
 alias vim=nvim
+alias enrun="LC_ALL=en_GB.utf8"
+alias encalc="enrun libreoffice --calc"
+alias dirs="dirs -v"
+alias bd=". bd -si"
