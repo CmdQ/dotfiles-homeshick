@@ -1,0 +1,33 @@
+--- evdev.before	2019-03-13 14:44:30.781997647 +0100
++++ evdev.xml	2019-03-13 14:44:07.422044833 +0100
+@@ -3364,24 +3364,30 @@
+       <configItem>
+         <name>de</name>
+         
+         <shortDescription>de</shortDescription>
+         <description>German</description>
+         <languageList>
+           <iso639Id>ger</iso639Id>
+         </languageList>
+       </configItem>
+       <variantList>
+         <variant>
+           <configItem>
++            <name>dev</name>
++            <description>German (development)</description>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
+             <name>deadacute</name>
+             <description>German (dead acute)</description>
+           </configItem>
+         </variant>
+         <variant>
+           <configItem>
+             <name>deadgraveacute</name>
+             <description>German (dead grave acute)</description>
+           </configItem>
+         </variant>
+         <variant>
+           <configItem>
