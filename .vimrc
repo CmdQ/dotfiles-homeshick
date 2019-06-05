@@ -1,3 +1,5 @@
+# Security issue
+set nomodeline
 set ignorecase
 set smartcase
 set hlsearch
@@ -10,10 +12,12 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'haya14busa/incsearch.vim'
 Plug 'powerline/powerline'
-
-" On-demand loading
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 call plug#end()
+
+filetype plugin on
+set wildmode=longest:full,full
+set splitbelow splitright
+set number relativenumber
 
 map / <Plug>(incsearch-forward)
 map ? <Plug>(incsearch-backward)
@@ -26,3 +30,6 @@ map *  <Plug>(incsearch-nohl-*)
 map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
+
+vnoremap <C-c> "*y :let @+=@*<CR>
+
