@@ -10,6 +10,7 @@
 	k = !gitk --all --simplify-merges &
 	ls = log --oneline
 	caa = commit -a --amend -C HEAD
+	unstage = reset
 [credential]
 	helper = cache
 [core]
