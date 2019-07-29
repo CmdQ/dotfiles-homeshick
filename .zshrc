@@ -98,21 +98,37 @@ fi
 #
 # Example aliases
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ls="lsd"
-alias l="ls -l --group-dirs=first"
-alias la="ls -a"
-alias ll="ls -la --group-dirs=first"
-alias lt="ls --tree"
-alias ld="ls -lt --date=relative"
-alias -g G="|grep -E"
-alias -g IG="|grep -Ei"
-alias -g L="|less"
 alias -g NUL="/dev/null"
 alias -g DN=">/dev/null"
 alias -g EN="2>/dev/null"
 alias -g AN=">/dev/null 2>&1"
-alias vim=nvim
+alias -g G="|rg"
+alias -g IG="G -i"
+alias -g L="|less"
+alias -g GG="AN |rg"
+alias -g IGG="GG -i"
+alias -g LL="AN |less"
+
+if hash lsd EN; then
+  alias ls="lsd"
+  alias l="ls -l --group-dirs=first"
+  alias ll="ls -la --group-dirs=first"
+  alias lt="ls --tree"
+  alias ld="ls -lt --date=relative"
+else
+  alias l="ls -l --group-directories-first"
+  alias ll="ls -la --group-directories-first"
+  alias ld="ls -lt"
+fi
+alias la="ls -a"
+
+
+if hash nvim EN; then
+  alias vim=nvim
+fi
 alias enrun="LC_ALL=en_GB.utf8"
 alias encalc="enrun libreoffice --calc"
 alias dirs="dirs -v"
 alias bd=". bd -si"
+alias h=history
+alias zshrc="$EDITOR ~/.zshrc"
