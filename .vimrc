@@ -1,4 +1,4 @@
-# Security issue
+" Security issue
 set nomodeline
 set ignorecase
 set smartcase
@@ -8,8 +8,10 @@ nnoremap <Esc><Esc> :<C-u>nohlsearch<CR>
 
 call plug#begin()
 Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-speeddating'
 Plug 'haya14busa/incsearch.vim'
 Plug 'powerline/powerline'
 call plug#end()
