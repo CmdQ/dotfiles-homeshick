@@ -75,7 +75,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-  source /etc/profile.d/vte.sh
+	source /etc/profile.d/vte.sh
 fi
 
 # export MANPATH="/usr/local/man:$MANPATH"
