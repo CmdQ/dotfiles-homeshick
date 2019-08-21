@@ -11,6 +11,7 @@
 	ls = log --oneline
 	caa = commit -a --amend -C HEAD
 	unstage = reset
+	last = log -1 --name-status
 [credential]
 	helper = cache
 [core]
