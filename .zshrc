@@ -1,4 +1,4 @@
-bindkey '^q' push-line-ro-edit
+bindkey '^q' push-line-or-edit
 
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
