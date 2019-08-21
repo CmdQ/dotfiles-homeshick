@@ -110,26 +110,26 @@ alias -g AN=">/dev/null 2>&1"
 alias -g G="|rg"
 alias -g IG="G -i"
 alias -g L="|less"
-alias -g GG="AN |rg"
-alias -g IGG="GG -i"
-alias -g LL="AN |less"
+alias -g GG="2>&1 |rg"
+alias -g IGG="2>&1 -i"
+alias -g LL="2>&1 |less"
 
 if hash lsd EN; then
-  alias ls="lsd"
-  alias l="ls -l --group-dirs=first"
-  alias ll="ls -la --group-dirs=first"
-  alias lt="ls --tree"
-  alias ld="ls -lt --date=relative"
+	alias ls="lsd"
+	alias l="ls -l --group-dirs=first"
+	alias ll="ls -la --group-dirs=first"
+	alias lt="ls --tree"
+	alias ld="ls -lt --date=relative"
 else
-  alias l="ls -l --group-directories-first"
-  alias ll="ls -la --group-directories-first"
-  alias ld="ls -lt"
+	alias l="ls -l --group-directories-first"
+	alias ll="ls -la --group-directories-first"
+	alias ld="ls -lt"
 fi
 alias la="ls -a"
 
 
 if hash nvim EN; then
-  alias vim=nvim
+	alias vim=nvim
 fi
 alias enrun="LC_ALL=en_GB.utf8"
 alias encalc="enrun libreoffice --calc"
