@@ -23,3 +23,5 @@
 	smudge = git-lfs smudge -- %f
 [push]
 	default = simple
+[fetch]
+	prune = true
