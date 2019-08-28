@@ -70,7 +70,11 @@ plugins=(
 	web-search
 )
 
-source $ZSH/oh-my-zsh.sh
+if [[ -x "$ZSH/oh-my-zsh.sh" ]]; then
+	source "$ZSH/oh-my-zsh.sh"
+else
+	echo You might want to install https://github.com/robbyrussell/oh-my-zsh
+fi
 
 # User configuration
 
