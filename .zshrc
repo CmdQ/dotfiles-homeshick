@@ -104,9 +104,7 @@ fi
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+
 alias -g NUL="/dev/null"
 alias -g DN=">/dev/null"
 alias -g EN="2>/dev/null"
@@ -140,4 +138,4 @@ alias encalc="enrun libreoffice --calc"
 alias dirs="dirs -v"
 alias bd=". bd -si"
 alias h=history
-alias zshrc="$EDITOR ~/.zshrc"
+alias zshrc="$EDITOR" ~/.zshrc
