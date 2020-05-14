@@ -83,6 +83,10 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
 	source /etc/profile.d/vte.sh
 fi
 
+if command -v pyenv 1>/dev/null 2>&1; then
+	eval "$(pyenv init -)"
+fi
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
