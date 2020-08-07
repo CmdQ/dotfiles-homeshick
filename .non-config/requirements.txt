@@ -5,3 +5,4 @@ black
 pyflakes
 pylint
 isort
+powerline-status
