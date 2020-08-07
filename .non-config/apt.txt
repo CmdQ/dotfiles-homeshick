@@ -1,0 +1,14 @@
+zsh
+tmux
+p7zip
+ripgrep
+entr
+fd-find
+rename
+neovim
+curl
+wget
+git
+python3
+python3-pip
+rustc
