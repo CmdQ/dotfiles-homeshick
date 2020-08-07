@@ -3,6 +3,5 @@ wheel
 rope
 black
 pyflakes
-pylint
 isort
 powerline-status
