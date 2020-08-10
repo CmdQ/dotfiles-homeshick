@@ -13,7 +13,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-speeddating'
 Plug 'haya14busa/incsearch.vim'
-Plug 'powerline/powerline'
+Plug 'vim-airline/vim-airline'
 call plug#end()
 
 filetype plugin on
@@ -35,3 +35,7 @@ map g# <Plug>(incsearch-nohl-g#)
 
 vnoremap <C-c> "*y :let @+=@*<CR>
 
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#whitespace#enabled = 1
+let g:airline#extensions#whitespace#show_message = 1
