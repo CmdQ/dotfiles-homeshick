@@ -1,2 +1,4 @@
 FiraCode
 firanf
+7zip
+winmerge
