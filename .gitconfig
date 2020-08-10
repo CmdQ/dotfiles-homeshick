@@ -5,7 +5,7 @@
 	st = status
 	ci = commit
 	co = checkout
-	hist = log --graph --color --find-copies
+	hist = log --all --abbrev-commit --graph --find-copies --color
 	sp = stash pop
 	k = !gitk --all --simplify-merges &
 	ls = log --oneline
