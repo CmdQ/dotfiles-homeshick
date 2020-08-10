@@ -1,4 +1,6 @@
 FiraCode
 firanf
 7zip
+git
+poshgit
 winmerge
