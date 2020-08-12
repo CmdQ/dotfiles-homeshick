@@ -1,4 +1,4 @@
-FiraCode
+firacodenf
 firanf
 7zip
 git
