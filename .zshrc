@@ -83,6 +83,10 @@ if [[ -z $PAM_ENVIRONMENT_WAS_READ ]]; then
 	export $(<~/.pam_environment)
 fi
 
+if [[ -r ~/.zbash ]]; then
+	source ~/.zbash
+fi
+
 setopt HIST_IGNORE_SPACE
 setopt HIST_NO_FUNCTIONS 
 setopt HIST_EXPIRE_DUPS_FIRST

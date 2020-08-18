@@ -1,0 +1,7 @@
+function mkcd {
+    if (($# != 1)); then
+        echo Provide name of directory\(/chain\) as the only argument.
+    else
+        mkdir -p "$1" && cd "$1"
+    fi
+}
