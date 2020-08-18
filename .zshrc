@@ -139,9 +139,12 @@ alias la="ls -a"
 if hash nvim EN; then
 	alias vim=nvim
 fi
+if hash fdfind EN; then
+	alias fd=fdfind
+fi
 alias enrun="LC_ALL=en_GB.utf8"
 alias encalc="enrun libreoffice --calc"
 alias dirs="dirs -v"
 alias bd=". bd -si"
 alias h=history
-alias zshrc="$EDITOR" ~/.zshrc
+alias zshrc="$EDITOR ~/.zshrc"
