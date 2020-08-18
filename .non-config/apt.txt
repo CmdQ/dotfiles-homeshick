@@ -14,5 +14,6 @@ git-lfs
 git-review
 python3
 python3-pip
+python3-venv
 rustc
 fonts-firacode
