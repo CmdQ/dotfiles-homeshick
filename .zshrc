@@ -1,3 +1,5 @@
+#!/usr/bin/zsh
+
 bindkey '^q' push-line-or-edit
 
 # Path to your oh-my-zsh installation.
@@ -11,12 +13,6 @@ ZSH_THEME=agnoster
 
 DEFAULT_USER=`whoami`
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -29,9 +25,6 @@ DEFAULT_USER=`whoami`
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
@@ -77,8 +70,6 @@ else
 	echo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
 
-# User configuration
-
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
 	source /etc/profile.d/vte.sh
 fi
@@ -88,28 +79,16 @@ if command -v pyenv 1>/dev/null 2>&1; then
 	eval "$(pyenv init -)"
 fi
 
-# export MANPATH="/usr/local/man:$MANPATH"
+if [[ -z $PAM_ENVIRONMENT_WAS_READ ]]; then
+	export $(<~/.pam_environment)
+fi
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+source ~/.bash_aliases
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
+alias zshrc="$EDITOR ~/.zshrc"
 
 alias -g NUL="/dev/null"
 alias -g DN=">/dev/null"
@@ -121,30 +100,3 @@ alias -g L="|less"
 alias -g GG="2>&1 |rg"
 alias -g IGG="2>&1 -i"
 alias -g LL="2>&1 |less"
-
-if hash lsd EN; then
-	alias ls="lsd"
-	alias l="ls -l --group-dirs=first"
-	alias ll="ls -la --group-dirs=first"
-	alias lt="ls --tree"
-	alias ld="ls -lt --date=relative"
-else
-	alias l="ls -l --group-directories-first"
-	alias ll="ls -la --group-directories-first"
-	alias ld="ls -lt"
-fi
-alias la="ls -a"
-
-
-if hash nvim EN; then
-	alias vim=nvim
-fi
-if hash fdfind EN; then
-	alias fd=fdfind
-fi
-alias enrun="LC_ALL=en_GB.utf8"
-alias encalc="enrun libreoffice --calc"
-alias dirs="dirs -v"
-alias bd=". bd -si"
-alias h=history
-alias zshrc="$EDITOR ~/.zshrc"
