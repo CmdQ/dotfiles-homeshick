@@ -83,8 +83,10 @@ if [[ -z $PAM_ENVIRONMENT_WAS_READ ]]; then
 	export $(<~/.pam_environment)
 fi
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+setopt HIST_IGNORE_SPACE
+setopt HIST_NO_FUNCTIONS 
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_SAVE_NO_DUPS
 
 source ~/.bash_aliases
 
