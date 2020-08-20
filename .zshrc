@@ -87,6 +87,10 @@ if [[ -r ~/.zbash ]]; then
 	source ~/.zbash
 fi
 
+if [[ -r ~/.profile ]]; then
+	source ~/.profile
+fi
+
 setopt HIST_IGNORE_SPACE
 setopt HIST_NO_FUNCTIONS 
 setopt HIST_EXPIRE_DUPS_FIRST
