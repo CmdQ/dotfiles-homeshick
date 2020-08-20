@@ -16,6 +16,7 @@
 	helper = cache
 [core]
 	longpaths = true
+	pager = diff-so-fancy | less --tabs=4 -RX
 [push]
 	default = simple
 [fetch]
