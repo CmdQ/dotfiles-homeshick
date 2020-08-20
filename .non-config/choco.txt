@@ -4,3 +4,4 @@ firanf
 git
 poshgit
 winmerge
+Everything
