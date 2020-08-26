@@ -6,3 +6,5 @@ poshgit
 winmerge
 Everything
 vlc
+XnView
+fsviewer
