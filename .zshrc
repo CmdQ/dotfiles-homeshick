@@ -11,7 +11,7 @@ export ZSH=~/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME=agnoster
 
-DEFAULT_USER=`whoami`
+DEFAULT_USER=$(whoami)
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -70,7 +70,7 @@ else
 	echo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
 
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+if [[ $TILIX_ID ]] || [[ $VTE_VERSION ]]; then
 	source /etc/profile.d/vte.sh
 fi
 
@@ -80,25 +80,29 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 if [[ -z $PAM_ENVIRONMENT_WAS_READ ]]; then
-	export $(<~/.pam_environment)
+	export "$(<"$HOME/.pam_environment")"
 fi
 
-if [[ -r ~/.zbash ]]; then
-	source ~/.zbash
+if [[ -r "$HOME/.zbash" ]]; then
+	source "$HOME/.zbash"
 fi
 
-if [[ -r ~/.profile ]]; then
-	source ~/.profile
+if [[ -r "$HOME/.profile" ]]; then
+	source "$HOME/.profile"
+fi
+
+if [[ -r "$HOME/src/github/enhancd/init.sh" ]]; then
+	source "$HOME/src/github/enhancd/init.sh"
 fi
 
 setopt HIST_IGNORE_SPACE
-setopt HIST_NO_FUNCTIONS 
+setopt HIST_NO_FUNCTIONS
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_SAVE_NO_DUPS
 
-source ~/.bash_aliases
+source "$HOME/.bash_aliases"
 
-alias zshrc="$EDITOR ~/.zshrc"
+alias zshrc="$EDITOR $HOME/.zshrc"
 
 alias -g NUL="/dev/null"
 alias -g DN=">/dev/null"

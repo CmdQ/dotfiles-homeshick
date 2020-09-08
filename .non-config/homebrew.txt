@@ -1,1 +1,4 @@
-diff-so-fancy
+bat
+ccat
+fzy
+git-delta
