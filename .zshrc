@@ -102,7 +102,7 @@ setopt HIST_SAVE_NO_DUPS
 
 source "$HOME/.bash_aliases"
 
-alias zshrc="$EDITOR $HOME/.zshrc"
+eval $(thefuck --alias)
 
 alias -g NUL="/dev/null"
 alias -g DN=">/dev/null"
