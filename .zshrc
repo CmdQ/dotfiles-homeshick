@@ -74,11 +74,6 @@ if [[ $TILIX_ID ]] || [[ $VTE_VERSION ]]; then
 	source /etc/profile.d/vte.sh
 fi
 
-# https://opensource.com/article/19/5/python-3-default-mac
-if command -v pyenv 1>/dev/null 2>&1; then
-	eval "$(pyenv init -)"
-fi
-
 if [[ -z $PAM_ENVIRONMENT_WAS_READ ]]; then
 	export "$(<"$HOME/.pam_environment")"
 fi
@@ -93,6 +88,15 @@ fi
 
 if [[ -r "$HOME/src/github/enhancd/init.sh" ]]; then
 	source "$HOME/src/github/enhancd/init.sh"
+fi
+
+# https://opensource.com/article/19/5/python-3-default-mac
+if command -v pyenv 1>/dev/null 2>&1; then
+	eval "$(pyenv init -)"
+fi
+
+if command -v bat
+	export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 fi
 
 setopt HIST_IGNORE_SPACE
