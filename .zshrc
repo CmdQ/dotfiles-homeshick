@@ -65,14 +65,14 @@ if [[ -r "$ZSH/oh-my-zsh.sh" ]]; then
 	source "$ZSH/oh-my-zsh.sh"
 else
 	echo You might want to install https://github.com/robbyrussell/oh-my-zsh like
-	echo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+	echo '    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"'
 fi
 
 if [[ $TILIX_ID ]] || [[ $VTE_VERSION ]]; then
 	source /etc/profile.d/vte.sh
 fi
 
-if [[ -z $PAM_ENVIRONMENT_WAS_READ ]]; then
+if [[ -r "$HOME/.pam_environment" ]] && [[ -z $PAM_ENVIRONMENT_WAS_READ ]]; then
 	export "$(<"$HOME/.pam_environment")"
 fi
 
@@ -93,7 +93,7 @@ if command -v pyenv 1>/dev/null 2>&1; then
 	eval "$(pyenv init -)"
 fi
 
-if command -v bat
+if command -v bat --version >/dev/null; then
 	export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 fi
 
@@ -104,7 +104,9 @@ setopt HIST_SAVE_NO_DUPS
 
 source "$HOME/.bash_aliases"
 
-eval $(thefuck --alias)
+if command -v >/dev/null; then
+	eval $(thefuck --alias)
+fi
 
 alias -g NUL="/dev/null"
 alias -g DN=">/dev/null"
