@@ -73,7 +73,7 @@ if [[ $TILIX_ID ]] || [[ $VTE_VERSION ]]; then
 fi
 
 if [[ -r "$HOME/.pam_environment" ]] && [[ -z $PAM_ENVIRONMENT_WAS_READ ]]; then
-	export "$(<"$HOME/.pam_environment")"
+	export $(<"$HOME/.pam_environment")
 fi
 
 if [[ -r "$HOME/.zbash" ]]; then
@@ -104,7 +104,7 @@ setopt HIST_SAVE_NO_DUPS
 
 source "$HOME/.bash_aliases"
 
-if command -v >/dev/null; then
+if command -v thefuck >/dev/null; then
 	eval $(thefuck --alias)
 fi
 
