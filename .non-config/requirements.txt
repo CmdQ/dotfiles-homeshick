@@ -1,8 +1,9 @@
+setuptools
+wheel
 black
 isort
-powerline-status
 pyflakes
+powerline-status
 rope
-setuptools
+pew
 thefuck
-wheel
