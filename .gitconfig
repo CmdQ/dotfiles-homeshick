@@ -8,9 +8,10 @@
 	sp = stash pop
 	k = !gitk --all --simplify-merges &
 	ls = log --oneline
-	caa = commit -a --amend -C HEAD
+	caa = commit -a --amend --no-edit
 	unstage = reset
 	last = log -1 --name-status
+	rw = review
 [credential]
 	helper = cache
 [core]
