@@ -1,7 +1,12 @@
 function mkcd {
     if (($# != 1)); then
-        echo Provide name of directory\(/chain\) as the only argument.
+        echo 'Provide name of directory(/chain) as the only argument.'
     else
-        mkdir -p "$1" && cd "$1"
+        mkdir -p "$1" && cd "$1" || echo "Couldn't create directory."
     fi
 }
+
+if [ -n "$WSL_INTEROP" ]; then
+	DISPLAY=$(grep nameserver /etc/resolv.conf | sed 's/.* //'):0.0
+	export DISPLAY
+fi
