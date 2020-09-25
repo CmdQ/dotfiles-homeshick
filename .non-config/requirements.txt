@@ -1,9 +1,10 @@
-setuptools
-wheel
+# sudo -H pip install
 black
 isort
-pyflakes
-powerline-status
-rope
 pew
+powerline-status
+pyflakes
+rope
+setuptools
 thefuck
+wheel

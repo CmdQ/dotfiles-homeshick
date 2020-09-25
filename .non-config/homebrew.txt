@@ -2,3 +2,5 @@ bat
 ccat
 fzy
 git-delta
+pyenv
+pyenv-virtualenv
