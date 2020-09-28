@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-if hash lsd >/dev/null 2>&1; then
+if command -v lsd &>/dev/null; then
 	alias ls="lsd"
 	alias l="ls -l --group-dirs=first"
 	alias ll="ls -la --group-dirs=first"
@@ -13,21 +13,21 @@ else
 fi
 alias la="ls -a"
 
-if hash nvim >/dev/null 2>&1; then
+if command -v nvim &>/dev/null; then
 	alias vim=nvim
     export EDITOR=nvim
-elif hash vim >/dev/null 2>&1; then
+elif command -v vim &>/dev/null; then
 	alias vim=vim
     export EDITOR=vim
-elif hash joe >/dev/null 2>&1; then
+elif command -v joe &>/dev/null; then
 	alias vim=joe
     export EDITOR=joe
-elif hash nano >/dev/null 2>&1; then
+elif command -v nano &>/dev/null; then
 	alias vim=nano
     export EDITOR=nano
 fi
 
-if hash fdfind >/dev/null 2>&1; then
+if command -v fdfind &>/dev/null; then
 	alias fd=fdfind
 fi
 

@@ -89,18 +89,18 @@ if [[ -r "$HOME/src/github/enhancd/init.sh" ]]; then
 fi
 
 # https://opensource.com/article/19/5/python-3-default-mac
-if command -v pyenv 1>/dev/null 2>&1; then
+if command -v pyenv &>/dev/null; then
 	eval "$(pyenv init -)"
 fi
 
-if command -v pew >/dev/null; then
+if command -v pew &>/dev/null; then
 	source $(pew shell_config)
 	if command -v pyenv-virtualenv-init >/dev/null; then
 		eval "$(pyenv virtualenv-init -)";
 	fi
 fi
 
-if command -v bat --version >/dev/null; then
+if command -v bat --version &>/dev/null; then
 	export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 fi
 
@@ -111,14 +111,14 @@ setopt HIST_SAVE_NO_DUPS
 
 source "$HOME/.bash_aliases"
 
-if command -v thefuck >/dev/null; then
+if command -v thefuck &>/dev/null; then
 	eval $(thefuck --alias)
 fi
 
 alias -g NUL="/dev/null"
 alias -g DN=">/dev/null"
 alias -g EN="2>/dev/null"
-alias -g AN=">/dev/null 2>&1"
+alias -g AN="&>/dev/null"
 alias -g G="|rg"
 alias -g IG="G -i"
 alias -g L="|less"
