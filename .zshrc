@@ -95,6 +95,9 @@ fi
 
 if command -v pew >/dev/null; then
 	source $(pew shell_config)
+	if command -v pyenv-virtualenv-init >/dev/null; then
+		eval "$(pyenv virtualenv-init -)";
+	fi
 fi
 
 if command -v bat --version >/dev/null; then
