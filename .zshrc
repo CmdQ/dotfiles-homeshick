@@ -91,10 +91,6 @@ fi
 # https://opensource.com/article/19/5/python-3-default-mac
 if command -v pyenv &>/dev/null; then
 	eval "$(pyenv init -)"
-fi
-
-if command -v pew &>/dev/null; then
-	source $(pew shell_config)
 	if command -v pyenv-virtualenv-init >/dev/null; then
 		eval "$(pyenv virtualenv-init -)";
 	fi

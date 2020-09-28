@@ -1,7 +1,6 @@
 # sudo -H pip install
 black
 isort
-pew
 powerline-status
 pyflakes
 rope
