@@ -1,4 +1,4 @@
-# sed -e '/^#/d' apt.txt
+# sed -e '/^#/d' apt.txt | xargs
 
 zsh
 mc
