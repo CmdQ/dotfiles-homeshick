@@ -8,6 +8,13 @@ bindkey "^[OA" up-line-or-beginning-search
 bindkey "^[OB" down-line-or-beginning-search
 bindkey '^q' push-line-or-edit
 
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_NO_FUNCTIONS
+setopt HIST_SAVE_NO_DUPS
+setopt PUSHD_TO_HOME
+
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
@@ -64,7 +71,12 @@ HIST_STAMPS="yyyy-mm-dd"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	docker
+	pip
+	pyenv
+	ripgrep
 	sudo
+	tmux
+	vscode
 )
 
 if [[ -r "$ZSH/oh-my-zsh.sh" ]]; then
@@ -72,10 +84,6 @@ if [[ -r "$ZSH/oh-my-zsh.sh" ]]; then
 else
 	echo You might want to install https://github.com/robbyrussell/oh-my-zsh like
 	echo '    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"'
-fi
-
-if [[ $TILIX_ID ]] || [[ $VTE_VERSION ]]; then
-	source /etc/profile.d/vte.sh
 fi
 
 if [[ -r "$HOME/.pam_environment" ]] && [[ -z $PAM_ENVIRONMENT_WAS_READ ]]; then
@@ -94,22 +102,9 @@ if [[ -r "$HOME/src/github/enhancd/init.sh" ]]; then
 	source "$HOME/src/github/enhancd/init.sh"
 fi
 
-# https://opensource.com/article/19/5/python-3-default-mac
-if command -v pyenv &>/dev/null; then
-	eval "$(pyenv init -)"
-	if command -v pyenv-virtualenv-init >/dev/null; then
-		eval "$(pyenv virtualenv-init -)";
-	fi
-fi
-
 if command -v bat --version &>/dev/null; then
 	export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 fi
-
-setopt HIST_IGNORE_SPACE
-setopt HIST_NO_FUNCTIONS
-setopt HIST_EXPIRE_DUPS_FIRST
-setopt HIST_SAVE_NO_DUPS
 
 source "$HOME/.bash_aliases"
 
