@@ -4,3 +4,4 @@ fzy
 git-delta
 pyenv
 pyenv-virtualenv
+croc

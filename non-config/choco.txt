@@ -8,3 +8,4 @@ Everything
 vlc
 XnView
 fsviewer
+croc
