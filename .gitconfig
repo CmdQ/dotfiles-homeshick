@@ -11,7 +11,7 @@
 	caa = commit -a --amend --no-edit
 	unstage = reset
 	last = log -1 --name-status
-	rw = review
+	rw = review --yes
 [credential]
 	helper = cache
 [core]
