@@ -9,3 +9,5 @@ vlc
 XnView
 fsviewer
 croc
+AltDrag
+WindowGrid
