@@ -79,8 +79,12 @@ plugins=(
 	vscode
 )
 
+# These needs to come before `compinit` which happens in $ZSH/oh-my-zsh.sh
 if [[ -d /home/linuxbrew/.linuxbrew/share/zsh/site-functions ]]; then
 	fpath=(/home/linuxbrew/.linuxbrew/share/zsh/site-functions $fpath)
+fi
+if [[ -d "$HOME/.homesick/repos/homeshick/completions" ]]; then
+	fpath=("$HOME/.homesick/repos/homeshick/completions" $fpath)
 fi
 
 if [[ -r "$ZSH/oh-my-zsh.sh" ]]; then
@@ -93,6 +97,8 @@ fi
 if [[ -r "$HOME/.pam_environment" ]] && [[ -z $PAM_ENVIRONMENT_WAS_READ ]]; then
 	export $(<"$HOME/.pam_environment")
 fi
+
+source "$HOME/.bash_aliases"
 
 if [[ -r "$HOME/.zbash" ]]; then
 	source "$HOME/.zbash"
@@ -108,12 +114,6 @@ fi
 
 if command -v bat --version &>/dev/null; then
 	export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-fi
-
-source "$HOME/.bash_aliases"
-
-if command -v thefuck &>/dev/null; then
-	eval $(thefuck --alias)
 fi
 
 alias -g NUL="/dev/null"

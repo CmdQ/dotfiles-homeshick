@@ -1,8 +1,12 @@
 bat
 ccat
+croc
+dust
 fzy
 git-delta
 lsd
 pyenv
 pyenv-virtualenv
-croc
+ranger
+sd
+tig
