@@ -79,6 +79,10 @@ plugins=(
 	vscode
 )
 
+if [[ -d /home/linuxbrew/.linuxbrew/share/zsh/site-functions ]]; then
+	fpath=(/home/linuxbrew/.linuxbrew/share/zsh/site-functions $fpath)
+fi
+
 if [[ -r "$ZSH/oh-my-zsh.sh" ]]; then
 	source "$ZSH/oh-my-zsh.sh"
 else
