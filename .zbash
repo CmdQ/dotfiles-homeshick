@@ -6,9 +6,13 @@ function mkcd {
     fi
 }
 
+function rmzi {
+    rm -f *:Zone.Identifier
+}
+
 if [ -n "$WSL_INTEROP" ]; then
-	DISPLAY=$(grep nameserver /etc/resolv.conf | sed 's/.* //'):0.0
-	export DISPLAY
+    DISPLAY=$(grep nameserver /etc/resolv.conf | sed 's/.* //'):0.0
+    export DISPLAY
 fi
 
 function wentr {
