@@ -6,15 +6,17 @@ set hlsearch
 
 nnoremap <Esc><Esc> :<C-u>nohlsearch<CR>
 
-call plug#begin()
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-speeddating'
-Plug 'haya14busa/incsearch.vim'
-Plug 'vim-airline/vim-airline'
-call plug#end()
+if has("nvim")
+    call plug#begin()
+    Plug 'tpope/vim-sensible'
+    Plug 'tpope/vim-repeat'
+    Plug 'tpope/vim-surround'
+    Plug 'tpope/vim-unimpaired'
+    Plug 'tpope/vim-speeddating'
+    Plug 'haya14busa/incsearch.vim'
+    Plug 'vim-airline/vim-airline'
+    call plug#end()
+endif
 
 filetype plugin on
 set wildmode=longest:full,full
