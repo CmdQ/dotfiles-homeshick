@@ -112,8 +112,9 @@ if [[ -r "$HOME/src/github/enhancd/init.sh" ]]; then
 	source "$HOME/src/github/enhancd/init.sh"
 fi
 
-if command -v bat --version &>/dev/null; then
-	export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+if command -v bat &>/dev/null; then
+	export PAGER=bat
+	export MANPAGER="sh -c 'col -bx | $PAGER -l man -p'"
 fi
 
 alias -g NUL="/dev/null"
