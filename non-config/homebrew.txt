@@ -2,6 +2,7 @@ bat
 ccat
 fzy
 git-delta
+lsd
 pyenv
 pyenv-virtualenv
 croc
