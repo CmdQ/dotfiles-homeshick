@@ -14,6 +14,7 @@ wget
 git
 git-lfs
 git-review
+gitk
 python3
 rustc
 fonts-firacode
