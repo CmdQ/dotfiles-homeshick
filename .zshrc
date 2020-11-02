@@ -87,25 +87,23 @@ if [[ -d "$HOME/.homesick/repos/homeshick/completions" ]]; then
 	fpath=("$HOME/.homesick/repos/homeshick/completions" $fpath)
 fi
 
-if [[ -r "$ZSH/oh-my-zsh.sh" ]]; then
-	source "$ZSH/oh-my-zsh.sh"
-else
-	echo You might want to install https://github.com/robbyrussell/oh-my-zsh like
-	echo '    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"'
-fi
-
 if [[ -r "$HOME/.pam_environment" ]] && [[ -z $PAM_ENVIRONMENT_WAS_READ ]]; then
 	export $(<"$HOME/.pam_environment")
 fi
 
-source "$HOME/.bash_aliases"
+if [[ -r "$HOME/.profile" ]]; then
+	source "$HOME/.profile"
+fi
 
 if [[ -r "$HOME/.zbash" ]]; then
 	source "$HOME/.zbash"
 fi
 
-if [[ -r "$HOME/.profile" ]]; then
-	source "$HOME/.profile"
+if [[ -r "$ZSH/oh-my-zsh.sh" ]]; then
+	source "$ZSH/oh-my-zsh.sh"
+else
+	echo You might want to install https://github.com/robbyrussell/oh-my-zsh like
+	echo '    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"'
 fi
 
 if [[ -r "$HOME/src/github/enhancd/init.sh" ]]; then
@@ -116,6 +114,8 @@ if command -v bat &>/dev/null; then
 	export PAGER=bat
 	export MANPAGER="sh -c 'col -bx | $PAGER -l man -p'"
 fi
+
+source "$HOME/.bash_aliases"
 
 alias -g NUL="/dev/null"
 alias -g DN=">/dev/null"
