@@ -10,7 +10,6 @@ LC_MONETARY=de_DE.utf8
 LC_ADDRESS=de_DE.utf8
 LC_TELEPHONE=de_DE.utf8
 
-# https://github.com/b4b4r07/enhancd#configurations
 ENHANCD_DISABLE_DOT=1
 ENHANCD_DISABLE_HYPHEN=1
 

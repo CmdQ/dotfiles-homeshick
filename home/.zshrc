@@ -48,7 +48,7 @@ if [[ -d /home/linuxbrew/.linuxbrew/share/zsh/site-functions ]]; then
 fi
 if [[ -d "$HOME/.homesick/repos/homeshick/completions" ]]; then
 	fpath=("$HOME/.homesick/repos/homeshick/completions" $fpath)
-	homeshick --quiet refresh 2
+	"$HOME/.homesick/repos/homeshick/bin/homeshick" --quiet refresh 2
 fi
 
 if [[ -r "$HOME/.pam_environment" ]] && [[ -z $PAM_ENVIRONMENT_WAS_READ ]]; then
