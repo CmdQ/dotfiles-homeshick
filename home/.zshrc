@@ -59,8 +59,8 @@ if [[ -r "$HOME/.profile" ]]; then
 	source "$HOME/.profile"
 fi
 
-if [[ -r "$HOME/.zbash" ]]; then
-	source "$HOME/.zbash"
+if [[ -r "$HOME/.z.bash" ]]; then
+	source "$HOME/.z.bash"
 fi
 
 # Which plugins would you like to load?
