@@ -1,6 +1,6 @@
 bat
-ccat
 croc
+guoxbin/guoxbin/dtool
 dust
 fzy
 git-delta

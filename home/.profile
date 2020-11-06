@@ -10,6 +10,12 @@ if [ -d "$HOME/.local/bin" ]; then
 	PATH="$HOME/.local/bin:$PATH"
 fi
 
+CARGO_HOME="$HOME/.cargo"
+if [ -d "$CARGO_HOME/bin" ]; then
+	PATH="$CARGO_HOME/bin:$PATH"
+	export CARGO_HOME
+fi
+
 # Include homebrew bin.
 BREW_BIN=/home/linuxbrew/.linuxbrew/bin/brew
 if [ -x "$BREW_BIN" ]; then
