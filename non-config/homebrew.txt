@@ -9,4 +9,5 @@ pyenv
 pyenv-virtualenv
 ranger
 sd
+starship
 tig

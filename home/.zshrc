@@ -15,17 +15,6 @@ setopt HIST_NO_FUNCTIONS
 setopt HIST_SAVE_NO_DUPS
 setopt PUSHD_TO_HOME
 
-# Path to your oh-my-zsh installation.
-export ZSH=~/.oh-my-zsh
-
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME=bureau
-
-DEFAULT_USER=$(whoami)
-
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
 
@@ -61,6 +50,20 @@ fi
 
 if [[ -r "$HOME/.z.bash" ]]; then
 	source "$HOME/.z.bash"
+fi
+
+# Path to your oh-my-zsh installation.
+export ZSH=~/.oh-my-zsh
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+if command -v starship &>/dev/null; then
+	ZSH_THEME=""
+	eval $(starship init zsh)
+else
+	ZSH_THEME="bureau"
 fi
 
 # Which plugins would you like to load?
