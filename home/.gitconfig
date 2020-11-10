@@ -58,3 +58,5 @@
 	smudge = cat
 [diff "ipynb"]
 	textconv = \"/opt/conda/bin/python3.7\" -m nbstripout -t
+[advice]
+	detachedHead = false
