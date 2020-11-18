@@ -73,6 +73,7 @@ fi
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	docker
+	kubectl
 	pip
 	pyenv
 	ripgrep
