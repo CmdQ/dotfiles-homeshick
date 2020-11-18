@@ -1,7 +1,5 @@
 #!/usr/bin/zsh
 
-export KEYTIMEOUT=1
-bindkey -v
 bindkey -M vicmd '?' history-incremental-search-backward
 bindkey -M vicmd '/' history-incremental-search-forward
 bindkey "^[OA" up-line-or-beginning-search
@@ -96,6 +94,12 @@ fi
 if command -v bat &>/dev/null; then
 	export PAGER=bat
 	export MANPAGER="sh -c 'col -bx | $PAGER -l man -p'"
+fi
+
+if [[ -d "$HOME/.homesick/repos/dotfiles/zsh-vim-mode" ]]; then
+	# Use Control-D instead of Escape to switch to NORMAL mode
+	VIM_MODE_VICMD_KEY='^D'
+	source "$HOME/.homesick/repos/dotfiles/zsh-vim-mode/zsh-vim-mode.plugin.zsh"
 fi
 
 source "$HOME/.bash_aliases"
