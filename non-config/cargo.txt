@@ -1,3 +1,2 @@
 git-absorb
 pipe-rename
-verco
