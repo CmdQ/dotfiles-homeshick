@@ -10,12 +10,12 @@ fi
 
 if [[ -n $WSL_INTEROP ]]; then
 	#DISPLAY=$(grep nameserver /etc/resolv.conf | sed 's/.* //'):0.0
-    NIC_WSL="vEthernet (WSL)"
-    NIC_HYPERV="vEthernet (Default Switch)"
-    if netsh.exe interface ip show interfaces | grep -qF "$NIC_WSL"; then
-	    DISPLAY=$(netsh.exe interface ip show address "$NIC_WSL" | sed -nE 's/^\s+IP[^:]+:\s+([0-9.]+)\s+/\1/p'):0.0
-    elif netsh.exe interface ip show interfaces | grep -qF "$NIC_HYPERV"; then
-	    DISPLAY=$(netsh.exe interface ip show address "$NIC_HYPERV" | sed -nE 's/^\s+IP[^:]+:\s+([0-9.]+)\s+/\1/p'):0.0
+    local nic_wsl="vEthernet (WSL)"
+    local nic_hyperv="vEthernet (Default Switch)"
+    if netsh.exe interface ip show interfaces | grep -qF "$nic_wsl"; then
+	    DISPLAY=$(netsh.exe interface ip show address "$nic_wsl" | sed -nE 's/^\s+IP[^:]+:\s+([0-9.]+)\s+/\1/p'):0.0
+    elif netsh.exe interface ip show interfaces | grep -qF "$nic_hyperv"; then
+	    DISPLAY=$(netsh.exe interface ip show address "$nic_hyperv" | sed -nE 's/^\s+IP[^:]+:\s+([0-9.]+)\s+/\1/p'):0.0
     fi
 	export DISPLAY
 fi
