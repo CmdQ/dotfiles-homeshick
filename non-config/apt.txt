@@ -17,6 +17,7 @@ git-review
 gitk
 python3
 rustc
+shellcheck
 fonts-firacode
 
 # To build Python via pyenv
