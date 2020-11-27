@@ -1,3 +1,2 @@
 [directory]
-truncation_symbol = ".../"
-fish_style_pwd_dir_length = 3
+fish_style_pwd_dir_length = 1
