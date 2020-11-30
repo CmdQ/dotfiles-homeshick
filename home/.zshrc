@@ -67,6 +67,7 @@ fi
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	docker
+	git
 	kubectl
 	pip
 	pyenv
