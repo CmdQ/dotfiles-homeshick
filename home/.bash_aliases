@@ -30,5 +30,4 @@ fi
 
 alias enrun="LC_ALL=en_GB.utf8"
 alias encalc="enrun libreoffice --calc"
-alias dirs="dirs -v"
 alias h=history
