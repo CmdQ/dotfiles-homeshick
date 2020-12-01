@@ -54,6 +54,8 @@
 	cmd = git-nbmergetool merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
 [mergetool]
 	prompt = false
+	keepBackup = false
+	keepTemporaries = false
 [filter "nbstripout"]
 	clean = \"/opt/conda/bin/python3.7\" -m nbstripout
 	smudge = cat
