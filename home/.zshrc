@@ -26,8 +26,8 @@ COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy-mm-dd"
 
 # These needs to come before `compinit` which happens in $ZSH/oh-my-zsh.sh
-if [[ -d /home/linuxbrew/.linuxbrew/share/zsh/site-functions ]]; then
-	fpath=(/home/linuxbrew/.linuxbrew/share/zsh/site-functions $fpath)
+if command -v brew &>/dev/null; then
+	fpath=("$(brew --prefix)/share/zsh/site-functions" $fpath)
 fi
 if [[ -d "$HOME/.homesick/repos/homeshick/completions" ]]; then
 	fpath=("$HOME/.homesick/repos/homeshick/completions" $fpath)
