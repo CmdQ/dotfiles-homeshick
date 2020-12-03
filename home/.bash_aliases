@@ -1,17 +1,19 @@
 #!/usr/bin/bash
 
+ls=ls
 if command -v lsd &>/dev/null; then
-	alias ls="lsd"
-	alias l="ls -l --group-dirs=first"
-	alias ll="ls -la --group-dirs=first"
-	alias lt="ls --tree"
-	alias ld="ls -lt --date=relative"
+	ls=lsd
+	alias ls="$ls"
+	alias l="$ls -l --group-dirs=first"
+	alias ll="$ls -la --group-dirs=first"
+	alias ld="$ls -lt --date=relative"
+	alias lt="$ls --tree"
 else
-	alias l="ls -l --group-directories-first"
-	alias ll="ls -la --group-directories-first"
-	alias ld="ls -lt"
+	alias l="$ls -l"
+	alias ll="$ls -la"
+	alias ld="$ls -lt"
 fi
-alias la="ls -a"
+alias la="$ls -a"
 
 if command -v nvim &>/dev/null; then
 	alias vim=nvim
