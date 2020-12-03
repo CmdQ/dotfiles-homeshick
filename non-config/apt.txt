@@ -7,7 +7,6 @@ p7zip
 ripgrep
 entr
 fd-find
-fzf
 rename
 neovim
 curl
