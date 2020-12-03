@@ -22,7 +22,7 @@ fi
 
 # My own commands:
 
-function mkcd {
+mkcd() {
     if (($# != 1)); then
         echo 'Provide name of directory(/chain) as the only argument.'
     else
@@ -30,44 +30,6 @@ function mkcd {
     fi
 }
 
-function rmzi {
+rmzi() {
     rm -f *:Zone.Identifier
-}
-
-function wentr {
-    local lockfile=entr.do
-    local ext=${1:?Need at least an extension to work with.}
-    shift
-    local folder=$*
-    if [[ -z $folder ]]; then
-        if [[ -e src ]]; then
-            folder=src
-        fi
-        if [[ -e tests ]]; then
-            folder="$folder tests"
-        fi
-        if [[ -e test ]]; then
-            folder="$folder test"
-        fi
-    fi
-    if [[ -z $folder ]]; then
-        echo No folders given.
-    else
-        if [[ -e $lockfile ]]; then
-            echo There\'s already an $lockfile file, doing nothing.
-        else
-            touch $lockfile
-            while [[ -e $lockfile ]]; do
-                find . -name "*.$ext" | entr -dns "echo $folder"
-                sleep 1
-            done
-            [[ -e $lockfile ]] && rm $lockfile
-        fi
-    fi
-}
-
-function wendr {
-    local lockfile=entr.do
-    [[ -e $lockfile ]] && rm $lockfile
-    pkill entr
 }
