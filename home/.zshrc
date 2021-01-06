@@ -89,7 +89,6 @@ if [[ -r "$HOME/src/github/enhancd/init.sh" ]]; then
 fi
 
 if command -v bat &>/dev/null; then
-	export PAGER=bat
 	export MANPAGER="sh -c 'col -bx | $PAGER -l man -p'"
 fi
 
