@@ -89,7 +89,7 @@ if [[ -r "$HOME/src/github/enhancd/init.sh" ]]; then
 fi
 
 if command -v bat &>/dev/null; then
-	export MANPAGER="sh -c 'col -bx | $PAGER -l man -p'"
+	export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 fi
 
 source "$HOME/.bash_aliases"

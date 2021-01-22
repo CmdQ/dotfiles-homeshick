@@ -68,3 +68,7 @@
 	autoupdate = true
 [diff]
 	algorithm = histogram
+[cola]
+	spellcheck = false
+[diff "sopsdiffer"]
+	textconv = sops -d
