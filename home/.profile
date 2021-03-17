@@ -21,3 +21,8 @@ BREW_BIN=/home/linuxbrew/.linuxbrew/bin/brew
 if [ -x "$BREW_BIN" ]; then
 	eval "$($BREW_BIN shellenv)"
 fi
+
+JULIA=/Applications/Julia-1.6.app/Contents/Resources/julia/bin
+if [ -x "$JULIA" ]; then
+	PATH="$PATH:$JULIA"
+fi
