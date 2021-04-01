@@ -34,3 +34,7 @@ mkcd() {
 rmzi() {
     rm -f ./*:Zone.Identifier
 }
+
+entr-py() {
+    (exit 2) || while (($? == 2)); do fd -e py | entr -ds 'isort . && black .'; done
+}
