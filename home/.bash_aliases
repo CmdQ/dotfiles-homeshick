@@ -31,5 +31,6 @@ if command -v fdfind &>/dev/null; then
 fi
 
 alias enrun="LC_ALL=en_GB.utf8"
-alias encalc="enrun libreoffice --calc"
+alias encalc="enrun libreoffice --calc &>/dev/null &"
 alias h=history
+alias ppup="python3 -m pip install --upgrade pip"
