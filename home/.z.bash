@@ -2,7 +2,6 @@
 # https://github.com/deadc0de6/dotdrop
 if [[ -r "$HOME/.homesick/repos/homeshick/homeshick.sh" ]]; then
     source "$HOME/.homesick/repos/homeshick/homeshick.sh"
-    homeshick refresh 2 # Check every other day for an update.
 else
     echo Install homeshick with
     echo git clone git://github.com/andsens/homeshick.git $HOME/.homesick/repos/homeshick
