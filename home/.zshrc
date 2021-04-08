@@ -29,6 +29,7 @@ HIST_STAMPS="yyyy-mm-dd"
 if command -v brew &>/dev/null; then
 	fpath=("$(brew --prefix)/share/zsh/site-functions" $fpath)
 fi
+
 if [[ -d "$HOME/.homesick/repos/homeshick/completions" ]]; then
 	fpath=("$HOME/.homesick/repos/homeshick/completions" $fpath)
 	"$HOME/.homesick/repos/homeshick/bin/homeshick" --quiet refresh 2
@@ -49,10 +50,6 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 if command -v starship &>/dev/null; then
 	ZSH_THEME=""
 	eval $(starship init zsh)
@@ -70,11 +67,9 @@ plugins=(
 	git
 	kubectl
 	pip
-	pyenv
 	ripgrep
 	sudo
 	tmux
-	vscode
 )
 
 if [[ -r "$ZSH/oh-my-zsh.sh" ]]; then
@@ -82,6 +77,10 @@ if [[ -r "$ZSH/oh-my-zsh.sh" ]]; then
 else
 	echo You might want to install https://github.com/robbyrussell/oh-my-zsh like
 	echo '    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"'
+fi
+
+if command -v pyenv &>/dev/null; then
+	eval "$(pyenv init -)"
 fi
 
 if [[ -r "$HOME/src/github/enhancd/init.sh" ]]; then
