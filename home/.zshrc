@@ -65,7 +65,6 @@ fi
 plugins=(
 	docker
 	git
-	kubectl
 	pip
 	ripgrep
 	sudo
