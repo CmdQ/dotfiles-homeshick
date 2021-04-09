@@ -18,6 +18,7 @@ python3
 rustc
 shellcheck
 fonts-firacode
+moreutils
 
 # To build Python via pyenv
 make
