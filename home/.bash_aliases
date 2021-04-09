@@ -26,11 +26,11 @@ elif command -v nano &>/dev/null; then
     export EDITOR=nano
 fi
 
-if command -v fdfind &>/dev/null; then
-	alias fd=fdfind
-fi
-
+alias fd=fdfind
 alias enrun="LC_ALL=en_GB.utf8"
 alias encalc="enrun libreoffice --calc &>/dev/null &"
 alias h=history
 alias ppup="python3 -m pip install --upgrade pip"
+
+skrg='rg --color=always --line-number "{}"'
+alias skf="sk --ansi -i -c '$skrg'"
