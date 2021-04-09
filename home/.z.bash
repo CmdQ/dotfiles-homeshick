@@ -10,16 +10,20 @@ else
     echo git clone git://github.com/andsens/homeshick.git "$HOME/.homesick/repos/homeshick"
 fi
 
-if [[ -n $WSL_INTEROP ]]; then
-    nic_wsl="vEthernet (WSL)"
-    nic_hyperv="vEthernet (Default Switch)"
-    if netsh.exe interface ip show interfaces | grep -qF "$nic_wsl"; then
-	    DISPLAY=$(netsh.exe interface ip show address "$nic_wsl" | sed -nE 's/^\s+IP[^:]+:\s+([0-9.]+)\s+/\1/p'):0.0
-    elif netsh.exe interface ip show interfaces | grep -qF "$nic_hyperv"; then
-	    DISPLAY=$(netsh.exe interface ip show address "$nic_hyperv" | sed -nE 's/^\s+IP[^:]+:\s+([0-9.]+)\s+/\1/p'):0.0
+find_windows_ip_for_display() {
+    if [[ -n $WSL_INTEROP ]]; then
+        local nic_wsl="vEthernet (WSL)"
+        local nic_hyperv="vEthernet (Default Switch)"
+        if netsh.exe interface ip show interfaces | grep -qF "$nic_wsl"; then
+            DISPLAY=$(netsh.exe interface ip show address "$nic_wsl" | sed -nE 's/^\s+IP[^:]+:\s+([0-9.]+)\s+/\1/p'):0.0
+        elif netsh.exe interface ip show interfaces | grep -qF "$nic_hyperv"; then
+            DISPLAY=$(netsh.exe interface ip show address "$nic_hyperv" | sed -nE 's/^\s+IP[^:]+:\s+([0-9.]+)\s+/\1/p'):0.0
+        fi
+        export DISPLAY
     fi
-	export DISPLAY
-fi
+}
+
+find_windows_ip_for_display
 
 SKIM_DEFAULT_COMMAND="fd --type f || git ls-tree -r --name-only HEAD || rg --files || find ."
 
@@ -34,9 +38,9 @@ mkcd() {
 }
 
 rmzi() {
-    rm -f ./*:Zone.Identifier
+    find . -type f -name '*:Zone.Identifier' -delete
 }
 
 entr-py() {
-    (exit 2) || while (($? == 2)); do fd -e py | entr -ds 'isort . && black .'; done
+    false || while (( $? == 1 || $? == 2 )); do fd -e py | entr -ds 'isort . && black .'; done
 }
