@@ -1,2 +1,3 @@
 git-absorb
 pipe-rename
+xplr
