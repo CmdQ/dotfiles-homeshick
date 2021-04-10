@@ -10,6 +10,10 @@ if [ -d "$HOME/.local/bin" ]; then
 	PATH="$HOME/.local/bin:$PATH"
 fi
 
+if [ -d "$HOME/.poetry/bin" ]; then
+	PATH="$HOME/.poetry/bin:$PATH"
+fi
+
 CARGO_HOME="$HOME/.cargo"
 if [ -d "$CARGO_HOME/bin" ]; then
 	PATH="$CARGO_HOME/bin:$PATH"
@@ -26,3 +30,5 @@ JULIA=/Applications/Julia-1.6.app/Contents/Resources/julia/bin
 if [ -x "$JULIA" ]; then
 	PATH="$PATH:$JULIA"
 fi
+
+export PATH
