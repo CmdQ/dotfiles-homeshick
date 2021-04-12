@@ -42,5 +42,5 @@ rmzi() {
 }
 
 entr-py() {
-    false || while (( $? == 1 || $? == 2 )); do fd -e py | entr -ds 'isort . && black .'; done
+    false || while (( $? == 1 || $? == 2 )); do fdfind -e py | entr -ds 'isort . && black .'; done
 }
