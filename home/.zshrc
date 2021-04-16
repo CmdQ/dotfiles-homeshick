@@ -65,7 +65,7 @@ fi
 plugins=(
 	docker
 	git
-	pip
+	poetry
 	ripgrep
 	sudo
 	tmux
