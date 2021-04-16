@@ -6,4 +6,4 @@ if executable("rg")
     set grepprg=rg\ --vimgrep
 endif
 
-clipboard+=unnamedplus
+set clipboard+=unnamedplus
