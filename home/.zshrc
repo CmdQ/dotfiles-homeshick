@@ -1,3 +1,15 @@
+if [[ -d "$HOME/.homesick/repos/homeshick/completions" ]]; then
+	fpath=("$HOME/.homesick/repos/homeshick/completions" $fpath)
+	"$HOME/.homesick/repos/homeshick/bin/homeshick" --quiet refresh 7
+fi
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 #!/usr/bin/zsh
 
 bindkey '^q' push-line-or-edit
@@ -30,11 +42,6 @@ if command -v brew &>/dev/null; then
 	fpath=("$(brew --prefix)/share/zsh/site-functions" $fpath)
 fi
 
-if [[ -d "$HOME/.homesick/repos/homeshick/completions" ]]; then
-	fpath=("$HOME/.homesick/repos/homeshick/completions" $fpath)
-	"$HOME/.homesick/repos/homeshick/bin/homeshick" --quiet refresh 7
-fi
-
 if [[ -r "$HOME/.pam_environment" ]] && [[ -z $PAM_ENVIRONMENT_WAS_READ ]]; then
 	export $(<"$HOME/.pam_environment")
 fi
@@ -50,10 +57,16 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
-if command -v starship &>/dev/null; then
+if [[ -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k" ]]; then
+	ZSH_THEME="powerlevel10k/powerlevel10k"
+	# run: p10k configure
+elif command -v starship &>/dev/null; then
 	ZSH_THEME=""
 	eval $(starship init zsh)
 else
+	echo Found neither powerlevel10k nor starship
+	echo git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+	echo https://starship.rs/
 	ZSH_THEME="bureau"
 fi
 
@@ -102,3 +115,6 @@ alias -g L="|less"
 alias -g GG="2>&1 |rg"
 alias -g IGG="2>&1 -i"
 alias -g LL="2>&1 |less"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
