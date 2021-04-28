@@ -1,3 +1,5 @@
+#!/usr/bin/zsh
+
 if [[ -d "$HOME/.homesick/repos/homeshick/completions" ]]; then
 	fpath=("$HOME/.homesick/repos/homeshick/completions" $fpath)
 	"$HOME/.homesick/repos/homeshick/bin/homeshick" --quiet refresh 7
@@ -9,8 +11,6 @@ fi
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
-#!/usr/bin/zsh
 
 bindkey '^q' push-line-or-edit
 
