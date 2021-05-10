@@ -72,3 +72,5 @@
 	spellcheck = false
 [diff "sopsdiffer"]
 	textconv = sops -d
+[rebase]
+	autoSquash = true
