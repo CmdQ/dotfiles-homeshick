@@ -1,4 +1,6 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
+
+source git.alias
 
 make_aliases() {
 	local ls=ls

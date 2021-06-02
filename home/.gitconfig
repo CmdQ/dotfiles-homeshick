@@ -4,12 +4,7 @@
 	st = status
 	ci = commit
 	co = checkout
-	hist = log --all --abbrev-commit --graph --find-copies --color
 	sp = stash pop
-	k = !gitk --all --simplify-merges &
-	ls = log --oneline
-	caa = commit -a --amend --no-edit
-	unstage = reset
 	last = log -1 --name-status
 	rw = review --yes
 	which = log --oneline --no-merges

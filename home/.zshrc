@@ -77,7 +77,6 @@ fi
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	docker
-	git
 	poetry
 	ripgrep
 	sudo
