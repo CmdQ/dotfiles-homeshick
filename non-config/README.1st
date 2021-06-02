@@ -1,0 +1,12 @@
+Homeshick needs to be there first, which is manual:
+git clone https://github.com/andsens/homeshick.git $HOME/.homesick/repos/homeshick
+
+Next, do
+$HOME/.homesick/repos/homeshick/bin/homeshick clone cmdq/dotfiles
+
+and go to
+$HOME/.homesick/repos/dotfiles/non-config
+to run
+./install.sh
+
+If you want Docker in WSL, see docker.md

@@ -44,6 +44,10 @@ echo Console \& language setup:
 echo We want DE, GB, and US all with UTF-8.
 prompt "Run dpkg-reconfigure locales?" && sudo dpkg-reconfigure locales
 
+if prompt "Install genie (bottled systemd) for native Docker?"; then
+    sudo ./genie.sh
+fi
+
 if ! there brew; then
     if prompt "Install Homebrew?"; then
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
