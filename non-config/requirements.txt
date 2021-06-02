@@ -1,10 +1,4 @@
-black
-isort
 maybe
 powerline-status
-pyflakes
-rope
-setuptools
-wheel
 bpython
 git-imerge
