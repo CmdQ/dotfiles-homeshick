@@ -61,6 +61,20 @@ if there brew; then
     fi
 fi
 
+# Poetry before pyenv
+if prompt "Install Poetry?"; then
+    curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3 -
+    omz_plugin="$ZSH_CUSTOM/plugins"
+    if [ -d "$omz_plugin" ]; then
+        omz_plugin="$omz_plugin/poetry"
+        mkdir "$omz_plugin"
+        "$HOME/.poetry/bin/poetry" completions zsh >"$omz_plugin/_poetry"
+    else
+        echo No oh-my-zsh plugin directory found for completions.
+    fi
+    unset omz_plugin
+fi
+
 # pyenv after brew!
 if there pyenv && prompt "Install system packages for pyenv to build Python?"; then
     sudo xargs apt-get install -y --no-install-recommends <pyenv.apt
