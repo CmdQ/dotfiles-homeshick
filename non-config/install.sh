@@ -2,6 +2,7 @@
 
 echo
 echo ATTENTION: Did you remember to init submodules?
+echo     git submodule update --init
 echo "If not, ctrl-c out now and do so."
 echo
 
