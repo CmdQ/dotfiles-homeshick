@@ -65,7 +65,7 @@ fi
 # Poetry before pyenv
 if prompt "Install Poetry?"; then
     curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3 - --no-modify-path
-    omz_plugin="$ZSH_CUSTOM/plugins"
+    omz_plugin="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins"
     if [ -d "$omz_plugin" ]; then
         omz_plugin="$omz_plugin/poetry"
         mkdir "$omz_plugin"
