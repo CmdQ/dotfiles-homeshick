@@ -1,11 +1,9 @@
 #!/bin/sh
 
-# set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ]; then
 	PATH="$HOME/bin:$PATH"
 fi
 
-# set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.local/bin" ]; then
 	PATH="$HOME/.local/bin:$PATH"
 fi
@@ -20,15 +18,18 @@ if [ -d "$CARGO_HOME/bin" ]; then
 	export CARGO_HOME
 fi
 
-# Include homebrew bin.
-BREW_BIN=/home/linuxbrew/.linuxbrew/bin/brew
-if [ -x "$BREW_BIN" ]; then
-	eval "$($BREW_BIN shellenv)"
+brew_bin=/home/linuxbrew/.linuxbrew/bin/brew
+if [ -x "$brew_bin" ]; then
+	eval "$($brew_bin shellenv)"
 fi
+unset brew_bin
 
-JULIA=/Applications/Julia-1.6.app/Contents/Resources/julia/bin
-if [ -x "$JULIA" ]; then
-	PATH="$PATH:$JULIA"
+julia_mac_dir=/Applications/Julia-1.6.app/Contents/Resources/julia/bin
+if [ -x "$julia_mac_dir" ]; then
+	PATH="$julia_mac_dir:$PATH"
+fi
+unset julia_mac_dir
 fi
 
 export PATH
+export DOT_PROFILE_WAS_READ=true

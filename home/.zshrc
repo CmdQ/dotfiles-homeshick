@@ -46,10 +46,6 @@ if [[ -r "$HOME/.pam_environment" ]] && [[ -z $PAM_ENVIRONMENT_WAS_READ ]]; then
 	export $(<"$HOME/.pam_environment")
 fi
 
-if [[ -r "$HOME/.profile" ]]; then
-	source "$HOME/.profile"
-fi
-
 if [[ -r "$HOME/.z.bash" ]]; then
 	source "$HOME/.z.bash"
 fi

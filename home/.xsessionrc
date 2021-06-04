@@ -1,2 +1,2 @@
 # https://unix.stackexchange.com/a/4628/340560
-if [ -r ~/.profile ]; then . ~/.profile; fi
+[ -r ~/.profile ] && source ~/.profile
