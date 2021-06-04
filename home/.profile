@@ -24,12 +24,18 @@ if [ -x "$brew_bin" ]; then
 fi
 unset brew_bin
 
+# After brew!
+if command -v pyenv >/dev/null 2>&1; then
+	export PYENV_ROOT="$HOME/.pyenv"
+	export PATH="$PYENV_ROOT/bin:$PATH"
+	eval "$(pyenv init --path)"
+fi
+
 julia_mac_dir=/Applications/Julia-1.6.app/Contents/Resources/julia/bin
 if [ -x "$julia_mac_dir" ]; then
 	PATH="$julia_mac_dir:$PATH"
 fi
 unset julia_mac_dir
-fi
 
 export PATH
 export DOT_PROFILE_WAS_READ=true
