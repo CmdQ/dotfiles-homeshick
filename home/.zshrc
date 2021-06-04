@@ -80,7 +80,7 @@ plugins=(
 )
 
 if [[ -r "$ZSH/oh-my-zsh.sh" ]]; then
-	source "$ZSH/oh-my-zsh.sh"
+	DISABLE_AUTO_UPDATE=true source "$ZSH/oh-my-zsh.sh"
 else
 	echo You might want to install https://github.com/robbyrussell/oh-my-zsh like
 	echo '    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"'
