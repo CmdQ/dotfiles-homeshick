@@ -37,5 +37,17 @@ if [ -x "$julia_mac_dir" ]; then
 fi
 unset julia_mac_dir
 
+windows_dir=/mnt/c/Windows
+if [ -d "$windows_dir" ]; then
+	PATH="$PATH:$windows_dir/system32:$windows_dir"
+fi
+unset windows_dir
+
+vscode_dir="/mnt/c/Users/tsbr/AppData/Local/Programs/Microsoft VS Code/bin"
+if [ -d "$vscode_dir" ]; then
+	PATH="$vscode_dir:$PATH"
+fi
+unset vscode_dir
+
 export PATH
 export DOT_PROFILE_WAS_READ=true
