@@ -12,7 +12,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 	source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-if [[ -z $DOT_PROFILE_WAS_READ ]]; then
+if [[ ${DOT_PROFILE_WAS_READ:=zshrc} = zshrc ]]; then
 	source "$HOME/.zprofile"
 fi
 
@@ -46,7 +46,7 @@ if command -v brew &>/dev/null; then
 	fpath=("$(brew --prefix)/share/zsh/site-functions" $fpath)
 fi
 
-if [[ -r "$HOME/.pam_environment" ]] && [[ -z $PAM_ENVIRONMENT_WAS_READ ]]; then
+if [[ -r "$HOME/.pam_environment" ]] && [[ ${PAM_ENVIRONMENT_WAS_READ:=zshrc} = zshrc ]]; then
 	export $(<"$HOME/.pam_environment")
 fi
 
