@@ -3,6 +3,7 @@ set nomodeline
 set ignorecase
 set smartcase
 set hlsearch
+set clipboard=unnamedplus
 
 nnoremap <Esc><Esc> :<C-u>nohlsearch<CR>
 
