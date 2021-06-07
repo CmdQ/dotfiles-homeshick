@@ -14,6 +14,7 @@ fi
 
 if [[ ${DOT_PROFILE_WAS_READ:=zshrc} = zshrc ]]; then
 	source "$HOME/.zprofile"
+	DOT_PROFILE_WAS_READ=zshrc
 fi
 
 bindkey '^q' push-line-or-edit
@@ -48,6 +49,7 @@ fi
 
 if [[ -r "$HOME/.pam_environment" ]] && [[ ${PAM_ENVIRONMENT_WAS_READ:=zshrc} = zshrc ]]; then
 	export $(<"$HOME/.pam_environment")
+	PAM_ENVIRONMENT_WAS_READ=zshrc
 fi
 
 if [[ -r "$HOME/.z.bash" ]]; then
