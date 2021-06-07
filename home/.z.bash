@@ -42,5 +42,9 @@ rmzi() {
 }
 
 entr-py() {
-    false || while (( $? == 1 || $? == 2 )); do fdfind -e py | entr -ds 'isort . && black .'; done
+    local runcmd="iblack ."
+    if command -v poetry &>/dev/null && ! { command -v pyenv &>/dev/null && pyenv virtualenv-prefix &>/dev/null ;} && [[ -z ${VIRTUAL_ENV} && -z ${POETRY_ACTIVE} ]]; then
+        runcmd="poetry run $runcmd"
+    fi
+    false || while (( $? == 1 || $? == 2 )); do fdfind -e py | entr -ds "$runcmd"; done
 }

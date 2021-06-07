@@ -36,6 +36,7 @@ make_aliases() {
 	alias mipy="mypy --ignore-missing-imports"
 	alias pywest="pytest --disable-warnings"
 	alias pymest="python3 -m pytest --disable-warnings"
+	alias po=poetry
 
 	local skrg='rg --color=always --line-number "{}"'
 	alias skf="sk --ansi -i -c '$skrg'"
