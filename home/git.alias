@@ -90,6 +90,8 @@ alias grhh='git reset --hard'
 alias grs='git restore'
 alias grst='git restore --staged'
 
+alias grw='git review --yes'
+
 alias gss='git status -sb'
 alias gst='git status'
 
