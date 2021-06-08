@@ -12,6 +12,7 @@
 	helper = cache
 [core]
 	longpaths = true
+	excludesfile = ~/.gitignore
 [push]
 	default = simple
 [fetch]
@@ -52,10 +53,10 @@
 	keepBackup = false
 	keepTemporaries = false
 [filter "nbstripout"]
-	clean = \"/opt/conda/bin/python3.7\" -m nbstripout
+	clean = \"/opt/conda/bin/python3\" -m nbstripout
 	smudge = cat
 [diff "ipynb"]
-	textconv = \"/opt/conda/bin/python3.7\" -m nbstripout -t
+	textconv = \"/opt/conda/bin/python3\" -m nbstripout -t
 [advice]
 	detachedHead = false
 [rerere]
