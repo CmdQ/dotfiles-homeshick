@@ -37,6 +37,7 @@ make_aliases() {
 	alias pywest="pytest --disable-warnings"
 	alias pymest="python3 -m pytest --disable-warnings"
 	alias po=poetry
+	alias bython=bpython
 
 	local skrg='rg --color=always --line-number "{}"'
 	alias skf="sk --ansi -i -c '$skrg'"
