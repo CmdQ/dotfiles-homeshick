@@ -72,7 +72,7 @@ while read -r file; do
 			# ... fill it with the staged contents and run it through all checkers.
 			git show ":$file" >"$tmp" \
 			&& isort --check - <"$tmp" \
-			&& black --stdin-filename --fast --check - <"$tmp" \
+			&& black --stdin-filename "$file" --fast --check - <"$tmp" \
 			&& flake8 --stdin-display-name "$file" - <"$tmp" \
 			|| exit 1 # Bail out early for any errors.
 
