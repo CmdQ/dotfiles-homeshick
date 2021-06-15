@@ -84,7 +84,7 @@ while read -r file; do
 	esac
 done <<<"$(git diff --cached --name-only --diff-filter=d)"
 
-if (( ${#shadow_mappings[@]} > 0 )); then
+if [[ -n $shadow_mappings > 0 ]]; then
 	# We collected files that mypy can process.
 
 	# The pattern still has the last alternative "open", filling something impossible is easiest.
