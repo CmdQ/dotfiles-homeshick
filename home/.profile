@@ -49,5 +49,11 @@ if [ -d "$vscode_dir" ]; then
 fi
 unset vscode_dir
 
+winmerge_dir="/mnt/c/Program Files/WinMerge"
+if [ -d "$winmerge_dir" ]; then
+	PATH="$winmerge_dir:$PATH"
+fi
+unset winmerge_dir
+
 export PATH
 export DOT_PROFILE_WAS_READ=true

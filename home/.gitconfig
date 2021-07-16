@@ -36,27 +36,6 @@
 [interactive]
     diffFilter = delta --color-only
 
-
-[diff "jupyternotebook"]
-	command = git-nbdiffdriver diff
-[merge "jupyternotebook"]
-	driver = git-nbmergedriver merge %O %A %B %L %P
-	name = jupyter notebook merge driver
-[difftool "nbdime"]
-	cmd = git-nbdifftool diff \"$LOCAL\" \"$REMOTE\" \"$BASE\"
-[difftool]
-	prompt = false
-[mergetool "nbdime"]
-	cmd = git-nbmergetool merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
-[mergetool]
-	prompt = false
-	keepBackup = false
-	keepTemporaries = false
-[filter "nbstripout"]
-	clean = \"/opt/conda/bin/python3\" -m nbstripout
-	smudge = cat
-[diff "ipynb"]
-	textconv = \"/opt/conda/bin/python3\" -m nbstripout -t
 [advice]
 	detachedHead = false
 [rerere]
@@ -70,3 +49,37 @@
 	textconv = sops -d
 [rebase]
 	autoSquash = true
+[diff]
+	tool = winmerge
+	prompt = false
+[mergetool]
+	tool = winmerge
+	prompt = false
+	keepBackup = false
+	keepTemporaries = false
+
+[diff "jupyternotebook"]
+	command = git-nbdiffdriver diff
+[merge "jupyternotebook"]
+	driver = git-nbmergedriver merge %O %A %B %L %P
+	name = jupyter notebook merge driver
+
+[difftool "nbdime"]
+	cmd = git-nbdifftool diff \"$LOCAL\" \"$REMOTE\" \"$BASE\"
+[mergetool "nbdime"]
+	cmd = git-nbmergetool merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+
+[filter "nbstripout"]
+	clean = python3 -m nbstripout
+	smudge = cat
+[diff "ipynb"]
+	textconv = python3 -m nbstripout -t
+
+[difftool "winmerge"]
+	name = WinMerge
+	cmd = WinMergeU.exe -u -e -xq -wl \"$(wslpath -aw \"$LOCAL\")\" \"$(wslpath -aw \"$REMOTE\")\"
+	trustExitCode = true
+[mergetool "winmerge"]
+	name = WinMerge
+	cmd = WinMergeU.exe -u -e -xq -wl \"$(wslpath -aw \"$LOCAL\")\" \"$(wslpath -aw \"$REMOTE\")\" \"$(wslpath -aw \"$LOCAL\")\"
+	trustExitCode = true
