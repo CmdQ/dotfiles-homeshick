@@ -10,6 +10,7 @@ lsd
 pyenv
 pyenv-virtualenv
 ranger
+saulpw/vd/visidata
 sd
 starship
 tig
