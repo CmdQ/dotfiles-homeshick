@@ -1,10 +1,11 @@
+afnanenayet/tap/diffsitter
 bat
 comby
 croc
-guoxbin/guoxbin/dtool
 dust
 fzy
 git-delta
+guoxbin/guoxbin/dtool
 lsd
 pyenv
 pyenv-virtualenv
