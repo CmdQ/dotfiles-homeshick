@@ -55,5 +55,7 @@ if [ -d "$winmerge_dir" ]; then
 fi
 unset winmerge_dir
 
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
+
 export PATH
 export DOT_PROFILE_WAS_READ=true
