@@ -21,3 +21,4 @@ shellcheck
 tmux
 wget
 zsh
+fish
