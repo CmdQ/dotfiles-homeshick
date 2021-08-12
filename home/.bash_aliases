@@ -32,7 +32,7 @@ make_aliases() {
 	alias fd=fdfind
 	alias enrun="LC_ALL=en_GB.utf8"
 	alias encalc="enrun libreoffice --calc &>/dev/null &"
-	alias ppup="python3 -m pip install --upgrade pip"
+	alias ppup="python3 -m pip install --upgrade pip && python3 -m pip install wheel bpython"
 	alias mipy="mypy --ignore-missing-imports"
 	alias pywest="pytest --disable-warnings"
 	alias pymest="python3 -m pytest --disable-warnings"
