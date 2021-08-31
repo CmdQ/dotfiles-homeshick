@@ -5,6 +5,7 @@ croc
 dust
 fzy
 git-delta
+git-imerge
 guoxbin/guoxbin/dtool
 lsd
 pyenv
