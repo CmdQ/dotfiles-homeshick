@@ -108,6 +108,18 @@ if [[ -r "$HOME/.bash_aliases" ]]; then
 	source "$HOME/.bash_aliases"
 fi
 
+lg()
+{
+	export LAZYGIT_NEW_DIR_FILE="$HOME/.lazygit/newdir"
+
+	lazygit "$@"
+
+	if [[ -f "$LAZYGIT_NEW_DIR_FILE" ]]; then
+		cd "$(cat "$LAZYGIT_NEW_DIR_FILE")"
+		rm -f "$LAZYGIT_NEW_DIR_FILE" >/dev/null
+	fi
+}
+
 alias -g NUL="/dev/null"
 alias -g DN=">/dev/null"
 alias -g EN="2>/dev/null"
