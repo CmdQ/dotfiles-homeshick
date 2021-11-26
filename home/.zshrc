@@ -104,7 +104,9 @@ if command -v bat &>/dev/null; then
 	export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 fi
 
-source "$HOME/.bash_aliases"
+if [[ -r "$HOME/.bash_aliases" ]]; then
+	source "$HOME/.bash_aliases"
+fi
 
 alias -g NUL="/dev/null"
 alias -g DN=">/dev/null"
