@@ -31,7 +31,7 @@ if command -v pyenv >/dev/null 2>&1; then
 	eval "$(pyenv init --path)"
 fi
 
-julia_mac_dir=/Applications/Julia-1.6.app/Contents/Resources/julia/bin
+julia_mac_dir=/Applications/Julia-1.7.app/Contents/Resources/julia/bin
 if [ -x "$julia_mac_dir" ]; then
 	PATH="$julia_mac_dir:$PATH"
 fi
